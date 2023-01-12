@@ -10,7 +10,7 @@ from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
 def init():
     global model
 
-    model_id  = "stabilityai/stable-diffusion-2-1-base"
+    model_id  = "stabilityai/stable-diffusion-2-1"
     scheduler = EulerDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler")
     model = StableDiffusionPipeline.from_pretrained(model_id , torch_dtype=torch.float16, scheduler=scheduler).to("cuda")
 
